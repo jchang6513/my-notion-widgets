@@ -11,14 +11,14 @@ const Block = styled.div`
   background-color: rgb(141 190 226);
   font-family: monospace;
   text-align: center;
-  padding: 36px 72px;
+  padding: 24px 48px;
 
   h1 {
-    font-size: 96px;
+    font-size: 48px;
     margin: 8px 0;
   }
   p {
-    font-size: 24px;
+    font-size: 18px;
     margin: 0;
   }
   
