@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { queryDatabase } from 'services';
 import { databaseSecrete } from 'helpers/envVariables';
+import { Data } from 'models/Database';
 import styles from '../styles/Home.module.css';
 
 const Block = styled.div`
@@ -26,7 +27,7 @@ const Block = styled.div`
   }
 `;
 
-export default function LatestWpm(props: any) {
+export default function LatestWpm(props: { wpm: Data }) {
   const { wpm } = props;
   return (
     <div className={styles.container} style={{ backgroundColor: 'rgb(141 190 226)' }}>
@@ -35,7 +36,7 @@ export default function LatestWpm(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Block>
-        <p>{dayjs(wpm.Date.date.start).format('MM.DD')}</p>
+        <p>{dayjs(wpm.Date?.date?.start).format('MM.DD')}</p>
         <h1>
           {wpm.WPM.number}
         </h1>

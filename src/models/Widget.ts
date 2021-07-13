@@ -5,20 +5,18 @@ export type Widget = {
   pathname: string;
 };
 
-export const dbToWidgetList = (database: Database): Widget[] => {
-  return database.data.reduce<Widget[]>((acc, data) => {
-    const name = data.Name?.title?.name;
-    const pathname = data.Pathname?.url;
+export const dbToWidgetList = (database: Database): Widget[] => database.data.reduce<Widget[]>((acc, data) => {
+  const name = data.Name?.title?.name;
+  const pathname = data.Pathname?.url;
 
-    if (name && pathname) {
-      return [
-        ...acc,
-        {
-          name,
-          pathname,
-        },
-      ];
-    }
-    return acc;
-  }, []);
-};
+  if (name && pathname) {
+    return [
+      ...acc,
+      {
+        name,
+        pathname,
+      },
+    ];
+  }
+  return acc;
+}, []);

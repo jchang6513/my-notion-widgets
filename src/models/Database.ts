@@ -1,13 +1,11 @@
-import { Dayjs } from 'dayjs';
-
 export type PropertyType = 'text' | 'date' | 'number' | 'title' | 'checkbox' | 'url'
 
 export type Data = { [key in string]: {
   type: PropertyType;
   text?: string;
-  date?: Dayjs | {
-    start: Dayjs;
-    end: Dayjs;
+  date?: {
+    start: string;
+    end: string;
   };
   number?: number;
   title?: {

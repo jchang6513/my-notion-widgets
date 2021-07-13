@@ -1,12 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { queryDatabase } from 'services';
-import { databaseSecrete } from 'helpers/envVariables';
-import { dbToWidgetList } from 'models/Widget';
 import styles from '../styles/Home.module.css';
 
-export default function Home(props: any) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,11 +45,3 @@ export default function Home(props: any) {
     </div>
   );
 }
-
-Home.getInitialProps = async () => {
-  const widgetList = dbToWidgetList(
-    await queryDatabase(databaseSecrete.widgetList),
-  );
-
-  return { widgetList };
-};
