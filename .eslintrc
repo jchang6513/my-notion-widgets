@@ -9,9 +9,8 @@
     "airbnb"
   ],
   "rules": {
-    "@typescript-eslint/indent": ["error", 2],
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [",.js", ".jsx", ".ts", ".tsx"] }],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
@@ -22,6 +21,12 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
