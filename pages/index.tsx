@@ -22,6 +22,11 @@ export default function Home() {
             <p>The latest result of typing speed test</p>
           </a>
 
+          <a href="/git-calendar" className={styles.card}>
+            <h2>GIT CALENDAR &rarr;</h2>
+            <p>MONTHLY GIT CALENDAR</p>
+          </a>
+
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
@@ -30,17 +35,6 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by
-          {' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
       </footer>
     </div>
   );
