@@ -12,10 +12,13 @@ const Block = styled.div`
   font-family: monospace;
   text-align: center;
   padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h1 {
     font-size: 48px;
-    margin: 8px 0;
+    margin: 2px 0;
   }
   p {
     font-size: 18px;

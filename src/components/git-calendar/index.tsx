@@ -11,10 +11,19 @@ export const CalendarLayout = styled.div<{ darkMode: boolean }>`
   background-color: ${({ darkMode }) => (darkMode ? '#000' : '#fff')};
 `;
 
-export const CommitDay = styled.div<{ color: string, darkMode: boolean, count: number }>`
-  border-radius: 2px;
-  height: 16px;
-  width: 16px;
+const commitGridSize = (gridSize = 30) => (
+  gridSize < 30 ? gridSize : 30
+);
+
+export const CommitDay = styled.div<{
+  color: string,
+  darkMode: boolean,
+  count: number,
+  gridSize?: number,
+}>`
+  border-radius: ${({ gridSize }) => (`${commitGridSize(gridSize) / 10}px`)};
+  height: ${({ gridSize }) => (`${commitGridSize(gridSize)}px`)};
+  width: ${({ gridSize }) => (`${commitGridSize(gridSize)}px`)};
   background-color: ${({ darkMode, color, count }) => {
     if (count) {
       return color;
