@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const CalendarLayout = styled.div<{ darkMode: boolean }>`
@@ -9,7 +8,7 @@ export const CalendarLayout = styled.div<{ darkMode: boolean }>`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: ${({ darkMode }) => darkMode ? '#000' : '#fff'};
+  background-color: ${({ darkMode }) => (darkMode ? '#000' : '#fff')};
 `;
 
 export const CommitDay = styled.div<{ color: string, darkMode: boolean, count: number }>`
@@ -20,7 +19,7 @@ export const CommitDay = styled.div<{ color: string, darkMode: boolean, count: n
     if (count) {
       return color;
     }
-    return darkMode ? '#2e3642' : '#EBEDF0'; 
+    return darkMode ? '#2e3642' : '#EBEDF0';
   }};
   margin: 1px;
 `;
