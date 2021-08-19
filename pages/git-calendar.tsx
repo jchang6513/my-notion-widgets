@@ -30,12 +30,18 @@ const GitCalendar = (props: Props) => {
   );
 };
 
-GitCalendar.getInitialProps = async (ctx: { query: { user: string, darkMode: string }}) => {
+GitCalendar.getInitialProps = async (ctx: {
+  query: {
+    user: string,
+    darkMode: string,
+    week: number,
+  }
+}) => {
   const { query } = ctx;
 
   try {
     const weeklyContributions = await getContributions(query?.user);
-    const gitContributions = weeklyContributions.slice(-8);
+    const gitContributions = weeklyContributions.slice(-(query?.week || 8));
 
     return { gitContributions, darkMode: query?.darkMode !== undefined };
   } catch (err) {
