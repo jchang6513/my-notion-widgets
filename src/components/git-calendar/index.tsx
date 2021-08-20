@@ -11,8 +11,8 @@ export const CalendarLayout = styled.div<{ darkMode: boolean }>`
   background-color: ${({ darkMode }) => (darkMode ? '#000' : '#fff')};
 `;
 
-const commitGridSize = (gridSize = 22) => (
-  gridSize < 22 ? gridSize : 22
+const commitGridSize = (gridSize = 18) => (
+  gridSize < 18 ? gridSize : 18
 );
 
 export const CommitDay = styled.div<{
