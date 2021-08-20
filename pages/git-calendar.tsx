@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { CalendarLayout, CommitDay } from 'components/git-calendar';
 import { getContributions, GitContributes } from 'services/github-api';
+import { CalendarLayout, CommitDay } from 'components/git-calendar';
 
 type Props = {
   gitContributions: GitContributes[];
@@ -13,9 +13,9 @@ const GitCalendar = (props: Props) => {
   const [gridSize, setGridSize] = useState<number | undefined>();
 
   useEffect(() => {
-    const height = Math.floor(window.innerHeight / 7);
-    const width = Math.floor(window.innerWidth / week);
-    setGridSize((height < width ? height : width) - 2);
+    const height = Math.floor(window.outerHeight / 7);
+    const width = Math.floor(window.outerWidth / week) - 2;
+    setGridSize((height < width ? height : width));
   }, [gitContributions.length, week]);
 
   return (
