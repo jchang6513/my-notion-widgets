@@ -10,12 +10,11 @@ type Props = {
 
 const GitCalendar = (props: Props) => {
   const { gitContributions, darkMode, week } = props;
-  const [gridSize, setGridSize] = useState<number>(null);
+  const [gridSize, setGridSize] = useState<number | undefined>();
 
   useEffect(() => {
     const height = Math.floor(window.innerHeight / 7);
     const width = Math.floor(window.innerWidth / week);
-    console.log(height, width);
     setGridSize((height < width ? height : width) - 2);
   }, [gitContributions.length, week]);
 
